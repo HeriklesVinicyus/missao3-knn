@@ -2,7 +2,6 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.model_selection import cross_val_score
 from sklearn.metrics import classification_report
-from plotter import plotter
 import sklearn.svm as svm
 
 
@@ -35,7 +34,7 @@ X_test = teste[:, :-1]
 y_test = teste[:,-1]
 
 
-clf = KNeighborsClassifier(n_neighbors=5)
+clf = KNeighborsClassifier(n_neighbors=5,p=1)
 
 clf.fit(X_train_n, y_train_n)
 y_pred = clf.predict(X_test_n)
